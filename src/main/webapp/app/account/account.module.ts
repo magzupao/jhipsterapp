@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { JhipsterSampleApplicationSharedModule } from 'app/shared';
+import { WebappcrmSharedModule } from 'app/shared';
 
 import {
     SessionsComponent,
@@ -16,7 +16,7 @@ import {
 } from './';
 
 @NgModule({
-    imports: [JhipsterSampleApplicationSharedModule, RouterModule.forChild(accountState)],
+    imports: [WebappcrmSharedModule, RouterModule.forChild(accountState)],
     declarations: [
         ActivateComponent,
         RegisterComponent,
@@ -29,4 +29,4 @@ import {
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class JhipsterSampleApplicationAccountModule {}
+export class WebappcrmAccountModule {}

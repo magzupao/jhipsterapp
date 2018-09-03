@@ -9,29 +9,29 @@ import { JhiEventManager } from 'ng-jhipster';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { JhipsterSampleApplicationSharedModule } from 'app/shared';
-import { JhipsterSampleApplicationCoreModule } from 'app/core';
-import { JhipsterSampleApplicationAppRoutingModule } from './app-routing.module';
-import { JhipsterSampleApplicationHomeModule } from './home/home.module';
-import { JhipsterSampleApplicationAccountModule } from './account/account.module';
-import { JhipsterSampleApplicationEntityModule } from './entities/entity.module';
+import { WebappcrmSharedModule } from 'app/shared';
+import { WebappcrmCoreModule } from 'app/core';
+import { WebappcrmAppRoutingModule } from './app-routing.module';
+import { WebappcrmHomeModule } from './home/home.module';
+import { WebappcrmAccountModule } from './account/account.module';
+import { WebappcrmEntityModule } from './entities/entity.module';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 
 @NgModule({
     imports: [
         BrowserModule,
-        JhipsterSampleApplicationAppRoutingModule,
+        WebappcrmAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
-        JhipsterSampleApplicationSharedModule,
-        JhipsterSampleApplicationCoreModule,
-        JhipsterSampleApplicationHomeModule,
-        JhipsterSampleApplicationAccountModule,
-        JhipsterSampleApplicationEntityModule
+        WebappcrmSharedModule,
+        WebappcrmCoreModule,
+        WebappcrmHomeModule,
+        WebappcrmAccountModule,
+        WebappcrmEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
@@ -54,4 +54,4 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
     ],
     bootstrap: [JhiMainComponent]
 })
-export class JhipsterSampleApplicationAppModule {}
+export class WebappcrmAppModule {}

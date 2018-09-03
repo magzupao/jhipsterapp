@@ -2,10 +2,8 @@ const webpack = require('webpack');
 const writeFilePlugin = require('write-file-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
 
 const utils = require('./utils.js');
@@ -13,7 +11,7 @@ const commonConfig = require('./webpack.common.js');
 
 const ENV = 'development';
 
-module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
+module.exports = webpackMerge(commonConfig({ env: ENV }), {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './target/www',
@@ -31,7 +29,6 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
             secure: false,
             headers: { host: 'localhost:9000' }
         }],
-        stats: options.stats,
         watchOptions: {
             ignored: /node_modules/
         }
@@ -57,12 +54,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
             test: /\.ts$/,
             use: [
                 { loader: 'angular2-template-loader' },
-                {
-                    loader: 'cache-loader',
-                    options: {
-                      cacheDirectory: path.resolve('target/cache-loader')
-                    }
-                },
+                { loader: 'cache-loader' },
                 {
                     loader: 'thread-loader',
                     options: {
@@ -100,12 +92,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
             loaders: ['style-loader', 'css-loader']
         }]
     },
-    stats: options.stats,
     plugins: [
-        new SimpleProgressWebpackPlugin({
-            format: options.stats === 'minimal' ? 'compact' : 'expanded'
-        }),
-        new FriendlyErrorsWebpackPlugin(),
         new ForkTsCheckerWebpackPlugin(),
         new BrowserSyncPlugin({
             host: 'localhost',

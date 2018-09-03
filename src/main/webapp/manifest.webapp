@@ -1,6 +1,6 @@
 {
-  "name": "JhipsterSampleApplication",
-  "short_name": "JhipsterSampleApplication",
+  "name": "Webappcrm",
+  "short_name": "Webappcrm",
   "icons": [
       {
           "src": "./content/images/hipster192.png",

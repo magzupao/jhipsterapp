@@ -12,9 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         NgbModule.forRoot(),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
-            alertAsToast: false,
-            i18nEnabled: true,
-            defaultI18nLang: 'en'
+            alertAsToast: false
         }),
         InfiniteScrollModule,
         CookieModule.forRoot(),
@@ -22,4 +20,4 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ],
     exports: [FormsModule, CommonModule, NgbModule, NgJhipsterModule, InfiniteScrollModule, FontAwesomeModule]
 })
-export class JhipsterSampleApplicationSharedLibsModule {}
+export class WebappcrmSharedLibsModule {}

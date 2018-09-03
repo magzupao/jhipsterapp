@@ -16,12 +16,12 @@
 
 spring:
     application:
-        name: jhipsterSampleApplication
+        name: webappcrm
     cache:
         type: simple
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:jhipsterSampleApplication;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        url: jdbc:h2:mem:webappcrm;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -86,7 +86,7 @@ jhipster:
     security:
         remember-me:
             # security key (this key should be unique for your application, and kept secret)
-            key: bb01514f8aded191677ac4f6014a0816fe4c00fe
+            key: 6b315d50fabe05921c5ff3db2469d56bc5b2e27c
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         logs: # Reports Dropwizard metrics in the logs
